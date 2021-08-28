@@ -13,6 +13,7 @@ public class FizzBuzz {
     return answer;
     }
 
+    // overload of fizzbuzz allowing any words for the code
     public String fizzBuzz(
         int number, 
         String multOf3Word, 
