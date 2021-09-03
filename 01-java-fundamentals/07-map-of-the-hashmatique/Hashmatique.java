@@ -1,3 +1,7 @@
 import java.util.HashMap;
 
-public class Ha
+public class Hashmatique {
+
+   
+
+}
