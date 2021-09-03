@@ -1,5 +1,8 @@
 import java.util.Random;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.*;
+
 public class PuzzleJava {
 
     public static ArrayList<Integer> make10Random(){
@@ -16,7 +19,7 @@ public class PuzzleJava {
         Random random = new Random();
         ArrayList<Character> charList = new ArrayList<Character>();
         // generate an array of the alphabet using a for loop
-        for(char c = 'a'; c<='z'; c++){
+        for(char c = 'a'; c<='z'; ++c){
             charList.add(c);
         }
         Character charReturn = charList.get(random.nextInt(26));
@@ -39,6 +42,9 @@ public class PuzzleJava {
         return passwordSet;
     }
 
-    
 
+    public ArrayList<String> shuffleArray(ArrayList<String> arr){
+        Collections.shuffle(arr);
+        return arr;
+    }
 }
