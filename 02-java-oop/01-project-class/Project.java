@@ -65,10 +65,3 @@ public class Project {
     }
 }
 
-public class Portfolio {
-    private ArrayList<Project>;
-
-    
-
-
-}
