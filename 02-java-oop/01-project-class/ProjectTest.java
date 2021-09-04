@@ -29,10 +29,11 @@ public class ProjectTest {
         concrete.setInitialCost(200);
         System.out.println(concrete.elevatorPitch());
 
-        // Not sure how to make this work right now actually.
-        // Portfolio projectPortfolio = new Portfolio(lawnMowing);
-        // projectPortfolio.setProjects(newProject);
-
-        // System.out.println(projectPortfolio);
+        Portfolio myPortfolio = new Portfolio();
+        myPortfolio.addToPortfolio(lawnMowing);
+        myPortfolio.addToPortfolio(newProject);
+        myPortfolio.addToPortfolio(painting);
+        myPortfolio.addToPortfolio(concrete);
+        myPortfolio.showPortfolio();
     }
 }

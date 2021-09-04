@@ -1,23 +1,34 @@
 import java.util.ArrayList;
 
 public class Portfolio {
-    private ArrayList<Project> projects;
+    private ArrayList<Project> Projects;
 
     public Portfolio() {
-
+        this.Projects = new ArrayList<Project>();
     }
 
-    public Portfolio(Project project){
-        this.projects = this.projects.add(project);
+    public void addToPortfolio(Project project){
+        Projects.add(project);
     }
 
-
-    public ArrayList<Project> getProjects() {
-        return projects;
+    public String getPortfolio() {
+        return Projects.toString();
     }
     
-    public void setProjects(Project project) {
-        this.projects = this.projects.add(project);
+    public double getPortfolioCost() {
+        double total = 0;
+        for(Project project : Projects) {
+            total += project.getInitialCost();
+        }
+        return total;
+    }
+
+    public void showPortfolio() {
+        System.out.println("All projects in portfolio: ");
+        for(Project project : Projects) {
+            System.out.println(project.elevatorPitch());
+        }
+        System.out.println(String.format("Total Cost: %f", this.getPortfolioCost()));
     }
 
 }
