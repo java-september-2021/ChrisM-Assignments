@@ -1,4 +1,4 @@
-public class BatTest {
+public class BigBatTest {
     public static void main(String[] args) {
         BigBat batemousPrime = new BigBat();
 
