@@ -7,8 +7,12 @@ public class ListTester {
         sll.add(5);
         sll.add(12);
         sll.add(2);
+        sll.deleteNodeAt(4);
+        sll.printValues();
         sll.remove();
         sll.remove();
+        sll.printValues();
+        // sll.findNodeAt(12);
         sll.printValues();
 
     }
