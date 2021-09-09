@@ -21,6 +21,14 @@ public class BankAccount {
         return number.toString();
     }
 
+    public static int getNumberOfAccounts() {
+        return numberOfAccounts;
+    }
+
+    public static double getTotalMoneyStored() {
+        return totalMoneyStored;
+    }
+
     public Long generateAccount(int length) {
         String account = "";
         for (int i = 0; i < length; i++) {
@@ -45,9 +53,11 @@ public class BankAccount {
     public void deposit(boolean checking, double amount) {
         if (checking == true) {
             this.checkingBalance += amount;
+            totalMoneyStored += amount;
             System.out.println("$" + amount + " deposited into checking.  Balance now at $" + this.checkingBalance);
         } else {
             this.savingsBalance += amount;
+            totalMoneyStored += amount;
             System.out.println("$" + amount + " deposited into savings.  Balance now at $" + this.savingsBalance);
         }
     }
@@ -56,6 +66,7 @@ public class BankAccount {
         if (checking == true) {
             if (amount < this.checkingBalance) {
                 this.checkingBalance -= amount;
+                totalMoneyStored -= amount;
                 System.out.printf("$ %.2f Withdrawn from checking.  Balance now at $ %.2f \n", amount,
                         this.checkingBalance);
             } else {
@@ -65,6 +76,7 @@ public class BankAccount {
         } else {
             if (amount < this.savingsBalance) {
                 this.savingsBalance -= amount;
+                totalMoneyStored -= amount;
                 System.out.printf("$%.2f withdrawn from savings.  Balance now at $%.2f \n", amount,
                         this.savingsBalance);
             } else {

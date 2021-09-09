@@ -14,5 +14,7 @@ public class BankAccountTest {
         System.out.println(myAccount.getAccount());
         System.out.println(myAccount.getAccount());
         System.out.println(yourAccount.getAccount());
+        System.out.println(BankAccount.getNumberOfAccounts());
+        System.out.println(BankAccount.getTotalMoneyStored());
     }
 }
