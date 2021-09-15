@@ -10,7 +10,20 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>Hello</h1>
+	<div id='wrapper'>
+		<div class="row">'
+			<div class="col-6 offset-4" >
+			<h1>Template Page</h1>
+			</div>
+		</div>
+        <div class="row">
+            <div class="col-4 offset-2">
+                <h2><a href="/date">Date Template</a> </h2>
+            </div>
+            <div class="col-6">
+                <h2><a href="/time">Time Template</a></h2>
+            </div>
+        </div>
 	
 </body>
 </html>
