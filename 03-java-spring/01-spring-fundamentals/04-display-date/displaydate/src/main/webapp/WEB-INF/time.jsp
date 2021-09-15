@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="/css/style.css"/>
 	<script type="text/javascript" src="/js/date.js"></script>
 	<meta charset="ISO-8859-1">
-	<title>Insert title here</title>
+	<title>Time Template</title>
 </head>
 <body>
 	//<script>alertInfo("time")</script>
