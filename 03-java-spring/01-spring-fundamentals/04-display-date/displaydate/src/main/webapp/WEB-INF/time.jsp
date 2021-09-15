@@ -12,7 +12,7 @@
 	<title>Time Template</title>
 </head>
 <body>
-	//<script>alertInfo("time")</script>
+	<script>alertInfo("time")</script>
 	<script>lookMa("It's a confirmation box!")</script>
 	<h1 class="green text-center">
 		<fmt:formatDate type="time" pattern="hh:mm a" value="${time}"/>

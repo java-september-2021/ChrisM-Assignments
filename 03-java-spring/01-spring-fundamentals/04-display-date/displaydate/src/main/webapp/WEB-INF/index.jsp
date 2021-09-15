@@ -24,6 +24,6 @@
                 <h2><a href="/time">Time Template</a></h2>
             </div>
         </div>
-	
+	</div>
 </body>
 </html>
