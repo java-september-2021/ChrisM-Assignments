@@ -7,12 +7,10 @@
 	<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="/css/main.css"/>
 	<meta charset="ISO-8859-1">
-	<title>Index</title>
+	<title>Insert title here</title>
 </head>
 <body>
-	<h1 class="text-center">Welcome!</h1>
-	<h2 class="text-center"><a href="/counter">Click here for counting fun!</a></h2>
-	<h2 class="text-center"><a href="/counter2">Click here for double the fun!</a></h2>
-	<h2 class="text-center"><a href="/reset">Click here to reset the count!</a></h2>
+	<h1>You have reset the counter </h1>
+	<h2>Click for <a href="/">Root Route</a> you have visited <c:out value="${count}"/> times!</h2>
 </body>
 </html>
