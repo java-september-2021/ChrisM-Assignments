@@ -5,11 +5,11 @@ public class Mammal {
         this.energyLevel = 100;
     }
 
-    public int getEnergyLevel(){
+    public int getEnergyLevel() {
         return this.energyLevel;
     }
 
-    public void setEnergyLevel(int energy){
+    public void setEnergyLevel(int energy) {
         this.energyLevel = energy;
     }
 

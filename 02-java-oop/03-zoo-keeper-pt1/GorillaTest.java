@@ -12,5 +12,5 @@ public class GorillaTest {
         gorilla.climb();
         gorilla.displayEnergy();
     }
-    
+
 }
