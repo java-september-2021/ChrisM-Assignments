@@ -2,7 +2,7 @@ import java.util.ArrayList;
 public class BasicJava {
     
     // print all numbers from 1 to 255
-    public static void countTo255() {
+    public void countTo255() {
         for(int i = 1; i<256; i++){
             System.out.println(i);
         }
