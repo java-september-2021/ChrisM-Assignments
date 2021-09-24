@@ -44,8 +44,18 @@ public class Book {
     @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date updatedAt;
     
+    @PrePersist
+    protected void onCreate(){
+        this.createdAt = new Date();
+    }
+    @PreUpdate
+    protected void onUpdate(){
+        this.updatedAt = new Date();
+    }
+    
     public Book() {
     }
+    
     public Book(String title, String desc, String lang, int pages) {
         this.title = title;
         this.description = desc;
@@ -59,6 +69,8 @@ public class Book {
 	public void setId(Long id) {
 		this.id = id;
 	}
+	
+	
 	public String getTitle() {
 		return title;
 	}
@@ -90,16 +102,14 @@ public class Book {
 	public Date getUpdatedAt() {
 		return updatedAt;
 	}
-	
+	public void setCreatedAt(Date createdAt) {
+		this.createdAt = createdAt;
+	}
+	public void setUpdatedAt(Date updatedAt) {
+		this.updatedAt = updatedAt;
+	}
    
-    @PrePersist
-    protected void onCreate(){
-        this.createdAt = new Date();
-    }
-    @PreUpdate
-    protected void onUpdate(){
-        this.updatedAt = new Date();
-    }
+    
 }
 
 

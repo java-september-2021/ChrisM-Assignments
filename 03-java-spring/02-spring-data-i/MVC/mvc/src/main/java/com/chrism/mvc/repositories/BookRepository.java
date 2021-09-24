@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 
 import com.chrism.mvc.models.Book;
 
-
 //...
 @Repository
 public interface BookRepository extends CrudRepository<Book, Long>{
@@ -20,4 +19,3 @@ public interface BookRepository extends CrudRepository<Book, Long>{
  // this method deletes a book that starts with a specific title
  Long deleteByTitleStartingWith(String search);
 }
-

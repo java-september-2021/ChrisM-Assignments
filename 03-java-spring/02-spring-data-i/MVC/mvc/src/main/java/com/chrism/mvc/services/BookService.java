@@ -16,14 +16,17 @@ public class BookService {
  public BookService(BookRepository bookRepository) {
      this.bookRepository = bookRepository;
  }
+ 
  // returns all the books
  public List<Book> allBooks() {
      return this.bookRepository.findAll();
  }
+ 
  // creates a book
  public Book createBook(Book b) {
      return this.bookRepository.save(b);
  }
+ 
  // retrieves a book
  public Book findBook(Long id) {
      return this.bookRepository.findById(id).orElse(null);

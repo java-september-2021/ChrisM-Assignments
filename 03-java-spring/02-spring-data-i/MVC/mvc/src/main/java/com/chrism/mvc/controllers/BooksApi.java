@@ -14,6 +14,7 @@ import com.chrism.mvc.services.BookService;
 //..
 
 @RestController
+//@RequestMapping("/api") better to do the /api here than on each one probably
 public class BooksApi {
  private final BookService bookService;
  public BooksApi(BookService bookService){
