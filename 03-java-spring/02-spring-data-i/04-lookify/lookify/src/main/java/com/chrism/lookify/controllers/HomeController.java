@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.chrism.lookify.models.Music;
 import com.chrism.lookify.services.MusicService;
@@ -62,6 +63,13 @@ public class HomeController {
 		Music thisSong = musicService.getOneSong(id);
 		viewModel.addAttribute("thisSong", thisSong);
 		return "showSong.jsp";
+	}
+	
+	@GetMapping("/search")
+	public String showSearch(@RequestParam("searchBox") String search, Model viewModel) {
+		viewModel.addAttribute("songs", musicService.searchByArtist(search));
+		viewModel.addAttribute("artist", search); //TODO: Get this working next!
+		return "search.jsp";
 	}
 	
 	

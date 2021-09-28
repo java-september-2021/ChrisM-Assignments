@@ -18,11 +18,11 @@
 			<a href="/dashboard"><input type="button" class="btn btn-info" value="Dashboard"></a>
 		</div>
 		<div class="col-4 offset-3 form-group">
-			
-			<form action="/search" method="POST">
+			<!-- This needs reworked.  Trying to get this to pass the artist name somehow -->
+			<form action="/search" method="GET">
 			<input type="text" name="searchBox" >
 		
-			<a href="/search"><input type="button" class="btn btn-warning" value="Search by Artist"></a>
+			<a href="/search"><input type="submit" class="btn btn-warning" value="Search by Artist"></a>
 			</form>
 		</div>
 	</div>

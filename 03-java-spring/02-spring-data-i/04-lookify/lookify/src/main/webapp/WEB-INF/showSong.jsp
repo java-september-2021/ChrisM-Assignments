@@ -21,6 +21,43 @@
 			<a href="/dashboard"><input type="button" class="btn btn-primary" value="Dashboard"></a>
 		</div>
 	</div>
+	<div class="row justify-content-center mt-5">
+		<div class="col-1">
+			<h3>Title</h3>
+		</div>
+		<div class="col-4">
+			<h3><c:out value="${thisSong.songName}"/></h3>
+		</div>
+	</div>
+	<div class="row justify-content-center mt-5">
+		<div class="col-1">
+			<h3>Artist</h3>
+		</div>
+		<div class="col-4">
+			<h3><c:out value="${thisSong.artistName}"/></h3>
+		</div>
+	</div>
+	<div class="row justify-content-center mt-5">
+		<div class="col-1">
+			<h3>Rating</h3>
+		</div>
+		<div class="col-4">
+			<h3><c:out value="${thisSong.rating}"/></h3>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-5 offset-2">
+			<a href="/${thisSond.id}/delete"><input type="button" class="btn btn-danger" value="Delete"></a>
+		</div>
+	</div>
+				
+				
+				
+				
+		
+	
+	
+	
 	
 </body>
 </html>
