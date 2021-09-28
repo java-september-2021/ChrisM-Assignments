@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.chrism.lookify.models.Music;
@@ -53,8 +54,7 @@ public class HomeController {
 	
 	@GetMapping("/songs/top")
 	public String topTen(Model viewModel) {
-		List<Music> topMusic = musicService.top10Songs();
-		viewModel.addAttribute("topMusic", topMusic);
+		viewModel.addAttribute("topMusic", musicService.top10Songs());
 		return "topTen.jsp";
 	}
 	
@@ -71,6 +71,13 @@ public class HomeController {
 		viewModel.addAttribute("artist", search); //TODO: Get this working next!
 		return "search.jsp";
 	}
+	
+	@RequestMapping(value="/{id}/delete", method=RequestMethod.DELETE)
+	public String delete(@PathVariable("id") Long id) {
+		musicService.deleteSong(id);
+		return "redirect:/dashboard";
+	}
+	
 	
 	
 	

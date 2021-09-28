@@ -39,7 +39,7 @@
 	</div>
 	<div class="row justify-content-center mt-5">
 		<div class="col-1">
-			<h3>Rating</h3>
+			<h3>Rating (1-10)</h3>
 		</div>
 		<div class="col-4">
 			<h3><c:out value="${thisSong.rating}"/></h3>

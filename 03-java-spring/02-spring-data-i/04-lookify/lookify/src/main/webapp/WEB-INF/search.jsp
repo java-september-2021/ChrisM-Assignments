@@ -10,6 +10,7 @@
 	<title>Insert title here</title>
 </head>
 <body>
+
 	<div class="row mt-5">
 		<div class="col-1 offset-2">
 			<a href="/songs/new"><input type="button" class="btn btn-primary" value="Add New"></a>
@@ -19,20 +20,25 @@
 		</div>
 		<div class="col-4 offset-3 form-group">
 			
-			<form action="/search" method="POST">
+			<form action="/search" method="GET">
 			<input type="text" name="searchBox" >
-		
-			<a href="/new"><input type="button" class="btn btn-warning" value="Search by Artist"></a>
+			<input type="submit" class="btn btn-warning" value="Search by Artist">
 			</form>
 		</div>
 	</div>
 	<div class="row justify-content-center">
+	
 		<div class="col-6">
-		
+		<h1>Songs by <c:out value="${artist}"/></h1>
 			<ul class="list-group mt-3">
 				<c:forEach items="${songs}" var="thisSong">
-				<li class="list-group-item"><h3><c:out value="${thisSong.rating}"/> -<a href="/songs/${thisSong.id}"> <c:out value="${thisSong.songName}"/></a> - <c:out value="${thisSong.artistName}"/></h3></li>
-				<!-- TODO: Needs a Delete! -->
+				<form action="/${thisSong.id}/delete" method="POST">
+				<input type="hidden" name="_method" value="delete">
+				<li class="list-group-item"><h3><c:out value="${thisSong.rating}"/> -<a href="/songs/${thisSong.id}"> <c:out value="${thisSong.songName}"/></a> - <c:out value="${thisSong.artistName}"/> - <input type="submit" class="btn btn-danger" value="Delete"></h3></li>
+				
+								
+								
+							</form>
 				</c:forEach>
 			</ul>
 		

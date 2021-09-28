@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="/css/main.css"/>
 	<meta charset="ISO-8859-1">
-	<title>Insert title here</title>
+	<title>Add a new Song</title>
 </head>
 <body>
 	<div class="row mt-5">
@@ -46,7 +46,7 @@
 			</div>
 			<div class="row justify-content-center">
 				<div class="form-group col-5">
-					<form:label class="form-label" path="rating">Rating</form:label>
+					<form:label class="form-label" path="rating">Rating (1-10)</form:label>
 					<form:errors path="rating"/>
 					<form:input class="form-control" path="rating"/>
 					<input type="submit" class="btn btn-success mt-3" value="Add Song">	

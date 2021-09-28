@@ -41,7 +41,10 @@
 						<tr>
 							<td><a href="/songs/${thisSong.id}"><c:out value="${thisSong.songName}"/></a></td>
 							<td><c:out value="${thisSong.rating}"/></td>
-							<td><a href="/${thisSond.id}/delete"><input type="button" class="btn btn-danger" value="Delete"></a>
+							<form action="/${thisSong.id}/delete" method="POST">
+								<input type="hidden" name="_method" value="delete">
+								<td><input type="submit" class="btn btn-danger" value="Delete"></td>
+							</form>
 						</tr>
 					</c:forEach>
 				</tbody>
