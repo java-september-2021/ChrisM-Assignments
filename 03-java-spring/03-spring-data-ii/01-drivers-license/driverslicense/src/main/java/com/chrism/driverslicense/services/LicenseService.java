@@ -14,6 +14,7 @@ public class LicenseService {
 		this.lRepo = lRepo;
 	}
 	
+	
 	public List<License> allLicenses() {
 		return this.lRepo.findAll();
 	}

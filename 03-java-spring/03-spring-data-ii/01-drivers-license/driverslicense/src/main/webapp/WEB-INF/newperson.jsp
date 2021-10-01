@@ -13,17 +13,20 @@
 <body>
 	<div class="row ">
 		<h1>New Person</h1>
-		<form:form action="/createPerson" method="POST" modelAttribute="person">
+		
 		<div class="col-2">
+		<form:form action="/person/new" method="POST" modelAttribute="person">
 			<form:label class="form-label" path="firstName">First Name</form:label>
 			<form:errors path="firstName"/>
 			<form:input class="form-control" path="firstName"/>
+			
 			<form:label class="form-label" path="lastName">Last Name</form:label>
 			<form:errors path="lastName"/>
 			<form:input class="form-control" path="lastName"/>
 		<input type="submit" value="Create">
-		</div>
 		</form:form>
+		</div>
+		
 	</div>
 	
 </body>
