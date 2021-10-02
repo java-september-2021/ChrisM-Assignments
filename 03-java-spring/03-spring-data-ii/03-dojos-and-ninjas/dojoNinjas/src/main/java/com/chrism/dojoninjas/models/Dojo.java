@@ -13,6 +13,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -23,6 +25,9 @@ public class Dojo {
  @Id
  @GeneratedValue(strategy = GenerationType.IDENTITY)
  private Long id;
+ 
+ @NotBlank
+ @Size(min = 2, max = 100)
  private String name;
  
  @Column(updatable=false)
@@ -49,6 +54,14 @@ public Dojo() {
  }
  
 
+
+public List<Ninja> getNinjas() {
+	return ninjas;
+}
+
+public void setNinjas(List<Ninja> ninjas) {
+	this.ninjas = ninjas;
+}
 
 public Long getId() {
 	return id;
