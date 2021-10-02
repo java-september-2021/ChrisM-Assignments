@@ -11,6 +11,14 @@
 	<title>Insert title here</title>
 </head>
 <body>
+<div class="row">
+	<div class="col-2">
+		<a href="/person/new">New Person</a>
+	</div>
+	<div class="col-2">
+		<a href="/license/new">New License</a>
+	</div>
+</div>
 <h1>New License</h1>
 	<div class="row">
 	<form:form action="/license/new" method="POST" modelAttribute="license">

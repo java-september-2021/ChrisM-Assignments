@@ -1,5 +1,6 @@
 package com.chrism.driverslicense.models;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -23,7 +24,8 @@ public class License {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String number;
+	private Integer number;
+	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date expiration_date;
 	private String state;
 	@Column(updatable=false)
@@ -48,6 +50,14 @@ public class License {
 	public License() {
 	}
 
+	public String stringifyLicenseNumber() {
+		Integer zerosToAdd = 7 - String.valueOf(this.number).length();
+		StringBuilder stringToMake = new StringBuilder();
+		for(int i = 0; i < zerosToAdd; i++) {
+			stringToMake.append('0');
+		}
+		return String.format("%s%d", stringToMake, this.number);
+	}
 
 	public Long getId() {
 		return id;
@@ -59,18 +69,24 @@ public class License {
 	}
 
 
-	public String getNumber() {
+	public Integer getNumber() {
 		return number;
 	}
 
 
-	public void setNumber(String number) {
+	public void setNumber(Integer number) {
 		this.number = number;
 	}
 
 
+
 	public Date getExpiration_date() {
 		return expiration_date;
+	}
+
+	public String getFormattedExpiration_date() {
+		SimpleDateFormat date = new SimpleDateFormat("MMMM/dd/yyyy");
+		return date.format(this.expiration_date);
 	}
 
 

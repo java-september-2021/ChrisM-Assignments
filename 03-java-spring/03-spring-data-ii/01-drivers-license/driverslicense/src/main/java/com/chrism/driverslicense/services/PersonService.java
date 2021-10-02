@@ -33,4 +33,9 @@ public class PersonService {
 	public void deletePerson(Long id) {
 		this.pRepo.deleteById(id);
 	}
+	
+	public List<Person> findNullLicensePeople() {
+		return this.pRepo.findByLicenseIdIsNull();
+	}
+	
 }

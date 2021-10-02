@@ -27,7 +27,7 @@ public class LicenseController {
 	
 	@GetMapping("/new")
 	public String newLicense(@ModelAttribute("license") License license, Model viewModel) {
-		viewModel.addAttribute("people", this.pService.allPeople());
+		viewModel.addAttribute("people", this.pService.findNullLicensePeople());
 		return "license.jsp";
 	}
 	

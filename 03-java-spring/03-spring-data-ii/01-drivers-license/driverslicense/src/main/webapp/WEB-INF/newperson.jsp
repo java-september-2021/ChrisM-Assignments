@@ -11,6 +11,14 @@
 	<title>Insert title here</title>
 </head>
 <body>
+<div class="row">
+	<div class="col-2">
+		<a href="/person/new">New Person</a>
+	</div>
+	<div class="col-2">
+		<a href="/license/new">New License</a>
+	</div>
+</div>
 	<div class="row ">
 		<h1>New Person</h1>
 		

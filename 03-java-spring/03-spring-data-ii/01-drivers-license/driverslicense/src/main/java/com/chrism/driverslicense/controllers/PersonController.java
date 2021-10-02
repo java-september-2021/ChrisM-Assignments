@@ -12,14 +12,17 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.chrism.driverslicense.models.Person;
+import com.chrism.driverslicense.services.LicenseService;
 import com.chrism.driverslicense.services.PersonService;
 
 @Controller
 @RequestMapping("/person")
 public class PersonController {
 	private PersonService pService;
-	public PersonController(PersonService pService) {
+	private LicenseService lService;
+	public PersonController(PersonService pService, LicenseService lService) {
 		this.pService = pService;
+		this.lService = lService;
 	}
 	
 	@GetMapping("/new")
@@ -43,6 +46,9 @@ public class PersonController {
 		viewModel.addAttribute("thisPerson", thisPerson);
 		return "showperson.jsp";
 	}
+	
+	
+	
 	
 	
 }
