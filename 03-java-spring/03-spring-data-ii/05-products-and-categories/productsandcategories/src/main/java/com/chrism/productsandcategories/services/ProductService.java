@@ -35,12 +35,12 @@ public class ProductService {
 		this.pRepo.deleteById(id);
 	}
 	
-	public List<Product> findProductsInCategory(Category category) {
-		return this.pRepo.findAllByCategory(category);
+	public List<Product> findProductsByCategory(Category thisCategory) {
+		return this.pRepo.findAllByCategory(thisCategory);
 	}
 	
-	public List<Product> findProductsNotInCategory(Category category) {
-		return this.pRepo.findByCategoryNotContains(category);
+	public List<Product> findProductNotInCategory(Category thisCategory) {
+		return this.pRepo.findByCategoryNotContains(thisCategory);
 	}
 	
 	

@@ -35,12 +35,12 @@ public class CategoryService {
 		this.cRepo.deleteById(id);
 	}
 	
-	public List<Category> findCategoriesProduct(Product thisProduct) {
-		return this.cRepo.findAllByProducts(thisProduct);
+	public List<Category> findCategoriesByProduct(Product product) {
+		return this.cRepo.findAllByProducts(product);
 	}
 	
-	public List<Category> findProductsNotInCategory(Product thisProduct) {
-		return this.cRepo.findByProductsNotContains(thisProduct);
+	public List<Category> findCategoryNotOnProduct(Product product) {
+		return this.cRepo.findByProductsNotContains(product);
 	}
 	
 }
