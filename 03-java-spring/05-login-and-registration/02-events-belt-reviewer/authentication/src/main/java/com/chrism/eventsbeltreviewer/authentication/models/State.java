@@ -1,4 +1,4 @@
-package com.chrism.dojooverflow.authentication.models;
+package com.chrism.eventsbeltreviewer.authentication.models;
 
 public class State {
 	public static String[] States = {

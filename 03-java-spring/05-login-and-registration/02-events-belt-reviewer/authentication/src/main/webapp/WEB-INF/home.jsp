@@ -13,7 +13,7 @@
 <body>
 	<div class="container">
 		<div class="row">
-			<div class="col-6 offset-1">
+			<div class="col-6 ">
 				<h1>Welcome, <c:out value="${user.firstName}!"/> </h1>
 			</div>
 			<div class="col-2 offset-3">
@@ -34,22 +34,16 @@
 						</tr>
 					</thead>
 					<tbody>
-					<c:forEach items="eventsInState" var="event">
+					<c:forEach items="${eventsInState}" var="event">
 						<tr>
-							<td></td>
-							<td>Filler</td>
-							<td>Replace</td>
-							<td>Us</td>
-							<td>All</td>
+							<td><a href="/events/${event.id}">${event.eventName}</a></td>
+							<td>${event.eventDate }</td>
+							<td>${event.city}</td>
+							<td>${event.eventCreator.firstName}</td>
+							<td>Add Join, edit and delete stuff</td>
 						</tr>
 					</c:forEach>
-						<tr>
-							<td>Test</td>
-							<td>Filler</td>
-							<td>Replace</td>
-							<td>Us</td>
-							<td>All</td>
-						</tr>
+						
 					</tbody>
 				</table>
 			</div>
@@ -57,7 +51,7 @@
 		<div class="row">
 			<div class="col-8">
 				<p>Here are some of the events in other states</p>
-				<table class="table table-info table-striped border-primary">
+				<table class="table table-success table-striped border-primary">
 					<thead>
 						<tr>
 							<th>Name</th>
@@ -69,22 +63,24 @@
 						</tr>
 					</thead>
 					<tbody>
+						<c:forEach items="${outOfStateEvents}" var="event">
 						<tr>
-							<td>Test</td>
-							<td>Filler</td>
-							<td>Replace</td>
-							<td>Replace</td>
-							<td>Us</td>
-							<td>All</td>
+							<td><a href="/events/${event.id}">${event.eventName}</a></td>
+							<td>${event.eventDate }</td>
+							<td>${event.city}</td>
+							<td>${event.state}</td>
+							<td>${event.eventCreator.firstName} ${event.eventCreator.lastName}</td>
+							<td><c:choose>
+							<c:when test="${event.participants.contains(user)}">
+								<a href="/events/${event.id}/unjoin">UnJoin</a>
+							</c:when>
+							<c:otherwise>
+								<a href="/events/${event.id}/join">Join</a>
+							</c:otherwise>
+							</c:choose>
+							</td>
 						</tr>
-						<tr>
-							<td>Test</td>
-							<td>Filler</td>
-							<td>Replace</td>
-							<td>Replace</td>
-							<td>Us</td>
-							<td>All</td>
-						</tr>
+					</c:forEach>
 					</tbody>
 				</table>
 			</div>

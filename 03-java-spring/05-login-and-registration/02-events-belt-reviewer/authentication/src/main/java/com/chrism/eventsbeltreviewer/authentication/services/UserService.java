@@ -1,12 +1,12 @@
-package com.chrism.dojooverflow.authentication.services;
+package com.chrism.eventsbeltreviewer.authentication.services;
 
 
 import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.chrism.dojooverflow.authentication.models.User;
-import com.chrism.dojooverflow.authentication.repositories.UserRepository;
+import com.chrism.eventsbeltreviewer.authentication.models.User;
+import com.chrism.eventsbeltreviewer.authentication.repositories.UserRepository;
 
 
 

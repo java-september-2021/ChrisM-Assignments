@@ -1,4 +1,4 @@
-package com.chrism.dojooverflow.authentication.models;
+package com.chrism.eventsbeltreviewer.authentication.models;
 
 import java.util.Date;
 

@@ -1,10 +1,10 @@
-package com.chrism.dojooverflow.authentication.repositories;
+package com.chrism.eventsbeltreviewer.authentication.repositories;
 
 import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.chrism.dojooverflow.authentication.models.Event;
+import com.chrism.eventsbeltreviewer.authentication.models.Event;
 
 public interface EventRepository extends CrudRepository<Event, Long> {
 	List<Event> findAll();

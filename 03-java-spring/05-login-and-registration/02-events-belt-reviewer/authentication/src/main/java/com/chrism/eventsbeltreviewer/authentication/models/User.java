@@ -1,4 +1,4 @@
-package com.chrism.dojooverflow.authentication.models;
+package com.chrism.eventsbeltreviewer.authentication.models;
 
 import java.util.Date;
 import java.util.List;
@@ -62,6 +62,7 @@ public class User {
 	// Keep track of the events the user created
 	@OneToMany(mappedBy="eventCreator", fetch=FetchType.LAZY)
 	private List<Event> eventsCreated;
+	
 	@ManyToMany(fetch = FetchType.LAZY)
 	@JoinTable(
 			name="events_users",

@@ -1,12 +1,12 @@
-package com.chrism.dojooverflow.authentication.services;
+package com.chrism.eventsbeltreviewer.authentication.services;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.chrism.dojooverflow.authentication.models.Message;
-import com.chrism.dojooverflow.authentication.repositories.MessageRepository;
+import com.chrism.eventsbeltreviewer.authentication.models.Message;
+import com.chrism.eventsbeltreviewer.authentication.repositories.MessageRepository;
 
 @Service
 public class MessageService {

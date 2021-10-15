@@ -1,4 +1,4 @@
-package com.chrism.dojooverflow.authentication.models;
+package com.chrism.eventsbeltreviewer.authentication.models;
 
 import java.util.Date;
 import java.util.List;
@@ -55,6 +55,7 @@ public class Event {
 	@JoinColumn(name = "user_id")
 	// User creating the event
 	private User eventCreator;
+	
 	@ManyToMany(fetch = FetchType.LAZY)
 	@JoinTable(
 			name="events_users",

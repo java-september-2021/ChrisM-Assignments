@@ -1,11 +1,11 @@
-package com.chrism.dojooverflow.authentication.validators;
+package com.chrism.eventsbeltreviewer.authentication.validators;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 
-import com.chrism.dojooverflow.authentication.models.User;
-import com.chrism.dojooverflow.authentication.repositories.UserRepository;
+import com.chrism.eventsbeltreviewer.authentication.models.User;
+import com.chrism.eventsbeltreviewer.authentication.repositories.UserRepository;
 
 @Component
 public class UserValidator {
