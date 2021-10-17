@@ -120,7 +120,7 @@ public class Event {
 	public Date getEventDate() {
 		return eventDate;
 	}
-
+	
 	public void setEventDate(Date eventDate) {
 		this.eventDate = eventDate;
 	}

@@ -2,6 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%> 
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,10 +38,19 @@
 					<c:forEach items="${eventsInState}" var="event">
 						<tr>
 							<td><a href="/events/${event.id}">${event.eventName}</a></td>
-							<td>${event.eventDate }</td>
+							<td><fmt:formatDate pattern="MMMM dd, yyyy" value="${event.eventDate}"/> </td>
 							<td>${event.city}</td>
 							<td>${event.eventCreator.firstName}</td>
-							<td>Add Join, edit and delete stuff</td>
+							<td>
+							<c:choose>
+								<c:when test="${event.participants.contains(user)}">
+									<a href="/events/${event.id}/unjoin">Unjoin</a>
+								</c:when>
+								<c:otherwise>
+									<a href="/events/${event.id}/join">Join</a>
+								</c:otherwise>
+							</c:choose>
+							</td>
 						</tr>
 					</c:forEach>
 						
@@ -66,17 +76,24 @@
 						<c:forEach items="${outOfStateEvents}" var="event">
 						<tr>
 							<td><a href="/events/${event.id}">${event.eventName}</a></td>
-							<td>${event.eventDate }</td>
+							<td><fmt:formatDate pattern="MMMM dd, yyyy" value="${event.eventDate }"/> </td>
 							<td>${event.city}</td>
 							<td>${event.state}</td>
 							<td>${event.eventCreator.firstName} ${event.eventCreator.lastName}</td>
 							<td><c:choose>
 							<c:when test="${event.participants.contains(user)}">
-								<a href="/events/${event.id}/unjoin">UnJoin</a>
+								<a href="/events/${event.id}/unjoin">UnJoin </a>
 							</c:when>
 							<c:otherwise>
-								<a href="/events/${event.id}/join">Join</a>
+								<a href="/events/${event.id}/join">Join </a>
 							</c:otherwise>
+							</c:choose>
+							<c:choose>
+							<c:when test="${user.id == event.eventCreator.id}">
+								<a href="events/${event.id}/edit">&nbsp&nbsp Edit</a>
+								<a href="events/${event.id}/delete">Delete</a>
+							</c:when>
+							
 							</c:choose>
 							</td>
 						</tr>

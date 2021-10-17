@@ -1,6 +1,7 @@
 package com.chrism.eventsbeltreviewer.authentication.services;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -70,12 +71,20 @@ public class EventService {
 		return this.eRepo.save(event);
 	}
 	
-	// I believe they said I was supposed to put more of the code inthe service
+	// I believe they said I was supposed to put more of the code in the service
 	//So I beautified my code here and then used it to add in the controller
 	public String formatDate(Event event) {
 		SimpleDateFormat formattedDate = new SimpleDateFormat("MMMM dd, yyyy");
 		String date = formattedDate.format(event.getEventDate());
 		return date;
+	}
+	
+	public List<String> eventDateListFormatter(List<Event> events) {
+		ArrayList<String> dateList = new ArrayList<String>();
+		for(Event event : events) {
+			dateList.add(formatDate(event));
+		}
+		return dateList;
 	}
 	
 	public void deleteEvent(Long id) {

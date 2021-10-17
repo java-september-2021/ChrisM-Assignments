@@ -14,8 +14,16 @@
 <body>
 	<div class="container">
 		<div class="row">
+			<div class="col-6 ">
+				<h1>Welcome, <c:out value="${user.firstName}!"/> </h1>
+			</div>
+			<div class="col-2 offset-3">
+				<a href="/logout" class="btn btn-danger mt-2">Logout</a>
+			</div>		
+		</div>
+		<div class="row">
 			<div class="col-5 offset-1">
-				<h1><c:out value="${event.eventName}"/></h1>
+				<h2><c:out value="${event.eventName}"/></h2>
 				<p>Host: <c:out value="${event.eventCreator.firstName} ${event.eventCreator.lastName}"/></p>
 				<p>Date: <c:out value="${date}"/></p>
 				<p>Location : <c:out value="${event.city}, ${event.state}"/></p>
@@ -40,16 +48,24 @@
 			
 			<div class="col-5">
 				<div class="row">
-				
+				<h2>Message Wall</h2>
+				<table>
+					<tr>
+						<td></td>
+					</tr>
+					
+				</table>
+				<textarea rows="15" cols="35" style="overflow:auto"><c:forEach items="${messages}" var="message">${message.messageCreator.firstName} :: ${message.messageText}&#13;&#10--------------------------------------------------&#13;&#10</c:forEach>
+				</textarea>
 				</div>
 				<div class="row">
-					<form:form action="events/newMessage" method="POST" modelAttribute="message">
+					<form:form action="/events/${event.id}" method="POST" modelAttribute="message">
 						
 						<form:label path="messageText" class="form-label">Add Comment</form:label>
 						<form:errors path="messageText"/>
 						<form:input path="messageText" class="form-control" type="text"/>
 						
-						<button class="btn btn-primary">Submit</button>
+						<button class="btn btn-primary mt-3">Submit</button>
 					</form:form>
 				</div>
 			</div>
